@@ -1,8 +1,8 @@
 import express from 'express'
 import { config } from 'dotenv'
-import connectToDB from './evalution3/backend/src/config/db.js';
-import userRouter from './evalution3/backend/src/routes/userRoute.js';
-import bookRoute from './evalution3/backend/src/routes/bookRoute.js';
+import connectToDB from './src/config/db.js';
+import userRouter from './src/routes/userRoute.js';
+import bookRoute from './src/routes/bookRoute.js';
 import cors from 'cors'
 
 config();
