@@ -1,8 +1,10 @@
 import express from 'express'
 import { config } from 'dotenv'
-import connectToDB from './config/db.js';
-import userRouter from './routes/userRoute.js';
-import bookRoute from './routes/bookRoute.js';
+import connectToDB from './evalution3/backend/src/config/db.js';
+import userRouter from './evalution3/backend/src/routes/userRoute.js';
+import bookRoute from './evalution3/backend/src/routes/bookRoute.js';
+import cors from 'cors'
+
 config();
 const port = process.env.PORT || 8080;
 const dburl=process.env.DB_URL || null;
@@ -10,6 +12,9 @@ const dburl=process.env.DB_URL || null;
 const app= express()
 
 app.use(express.json());  
+app.use(cors({
+  origin : `http://localhost:5173`
+}))
 
 //userRoter
 app.use('/user', userRouter)
